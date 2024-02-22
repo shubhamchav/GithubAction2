@@ -24,6 +24,6 @@ jobs:
           pwd
           ls -l
 
-      #- name: Run Custom Script
-      #  run: |
-        #  bash /home/runner/work/gitaction_poc1_2/gitaction_poc1_2/scripts/myscript.sh
+      - name: Run Custom Script
+        run: |
+          bash /home/runner/work/GithubAction2/GithubAction2/scripts/myscript.sh
