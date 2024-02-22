@@ -1,0 +1,29 @@
+name: Example Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      GREETING: "Hello"
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Print Greeting
+        run: echo "${{ env.GREETING }} ${{ vars.USER_NAME }} Welcome to GitHub Actions."
+
+      - name: Print Working Directory
+        run: |
+          pwd
+          ls -l
+
+      - name: Run Custom Script
+        run: |
+          bash /home/runner/work/gitaction_poc1_2/gitaction_poc1_2/scripts/myscript.sh
